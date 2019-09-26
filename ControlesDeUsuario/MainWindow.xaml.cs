@@ -52,5 +52,55 @@ namespace ControlesDeUsuario
                     break;
             }
         }
+
+        private void BtnCalcularArea_Click(object sender, RoutedEventArgs e)
+        {
+            double area = 0.0;
+
+            switch(cdFiguraC.SelectedIndex)
+            {
+                case 0:
+                    double radio =
+                        double.Parse(
+                    ((ParametrosCirculo)
+                        (grdParametrosFigura.Children[0])).
+                        txtRadio.Text);
+                    area = Math.PI * radio * radio;
+                    break;
+                case 1:
+                    double base1 =
+                        double.Parse(
+                            ((ParametrosTriangulo)(grdParametrosFigura.Children[0])).
+                            txtBase.Text);
+                    double altura =
+                        double.Parse(
+                            ((ParametrosTriangulo)(grdParametrosFigura.Children[0])).
+                            txtAltura.Text);
+                    area = base1 * altura / 2;    
+                    break;
+                case 2:
+                    double base2 =
+                        double.Parse(
+                            ((ParametrosRectangulo)(grdParametrosFigura.Children[0])).
+                            txtBase.Text
+                            );
+                    double altura2 =
+                        double.Parse(
+                            ((ParametrosRectangulo)(grdParametrosFigura.Children[0])).
+                            txtAltura.Text
+                            );
+                    area = base2 * altura2;
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                default:
+                    break;
+            }
+            lblResultado.Text = area.ToString();
+        }
     }
 }
