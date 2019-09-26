@@ -92,10 +92,37 @@ namespace ControlesDeUsuario
                     area = base2 * altura2;
                     break;
                 case 3:
+                    double perimetro =
+                        double.Parse(
+                            ((ParametrosPentagono)(grdParametrosFigura.Children[0])).
+                            txtPerimetro.Text);
+                    double apotema =
+                        double.Parse(
+                            ((ParametrosPentagono)(grdParametrosFigura.Children[0])).
+                            txtApotema.Text);
+                    area = perimetro * apotema / 2;
                     break;
                 case 4:
+                    double lado =
+                        double.Parse(
+                            ((ParametrosCuadrado)(grdParametrosFigura.Children[0])).
+                            txtLado.Text);
+                    area = lado * lado; 
                     break;
                 case 5:
+                    double basemayor =
+                        double.Parse(
+                            ((ParametrosTrapecio)(grdParametrosFigura.Children[0])).
+                            txtBaseMayor.Text);
+                    double basemenor =
+                        double.Parse(
+                            ((ParametrosTrapecio)(grdParametrosFigura.Children[0])).
+                            txtBaseMenor.Text);
+                    double altura3 =
+                        double.Parse(
+                            ((ParametrosTrapecio)(grdParametrosFigura.Children[0])).
+                            txtAltura.Text);
+                    area = (basemayor + basemenor) * altura3 / 2;
                     break;
                 default:
                     break;
